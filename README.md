@@ -1,2 +1,2 @@
 # OrganizadorPython
-Organizador de pastas de arquivo automatizado com python.
+Estou criando um organizador de pastas utilizando automatizações em python.
