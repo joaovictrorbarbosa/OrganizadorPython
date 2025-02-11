@@ -1,21 +1,10 @@
 import os
 from tkinter.filedialog import askdirectory
+from biblioteca.organizador import (organizador)
+
 
 caminho = askdirectory(title= "Selecione a pasta que deseja organizar.")
 
-listaarq = os.listdir(caminho)
-print(listaarq)
+organizador(caminho)
 
-locais = {
-    "documentos": ['.docx','.pdf'],
-    'Banco de dados':['.sql'],
-    'EXCEL': ['.xlsx']
-    }
-
-for arq in listaarq:
-    nome, extensao = os.path.splitext(f'{caminho}/{arq}')
-    for pasta in locais:
-        if extensao in locais[pasta]:
-            if not os.path.exists(f'{caminho}/{pasta}'):
-                os.mkdir(f'{caminho}/{pasta}')
-            os.rename(f'{caminho}/{arq}', f'{caminho}/{pasta}/{arq}')
+print('Sua pasta foi organizada!')
